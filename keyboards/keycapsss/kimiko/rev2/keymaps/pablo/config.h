@@ -50,7 +50,7 @@
 	#define	   ENABLE_RGB_MATRIX_NONE
 	#define    ENABLE_RGB_MATRIX_SOLID_COLOR         // Static single hue, no speed support
 
-	// #define    ENABLE_RGB_MATRIX_ALPHAS_MODS         // Static dual hue, speed is hue for secondary hue
+	#define    ENABLE_RGB_MATRIX_ALPHAS_MODS         // Static dual hue, speed is hue for secondary hue
 	#define    ENABLE_RGB_MATRIX_GRADIENT_UP_DOWN    // Static gradient top to bottom, speed controls how much gradient changes
 	// #define    ENABLE_RGB_MATRIX_GRADIENT_LEFT_RIGHT // Static gradient left to right, speed controls how much gradient changes
 	#define    ENABLE_RGB_MATRIX_BREATHING           // Single hue brightness cycling animation
