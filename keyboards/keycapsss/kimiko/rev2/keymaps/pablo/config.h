@@ -24,6 +24,8 @@
 #define VIAL_UNLOCK_COMBO_COLS { 0, 0 }
 #define VIALRGB_NO_DIRECT
 
+#define DYNAMIC_KEYMAP_LAYER_COUNT 4
+
 /* Select hand configuration */
 //------------------------------------------
 // #define MASTER_LEFT
@@ -127,3 +129,4 @@
 #    define RGBLIGHT_EFFECT_TWINKLE
 #endif
 //------------------------------------------
+
