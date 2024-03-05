@@ -73,8 +73,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |---------+------+------+------+------+------|      |        |   |       |       |------+------+------+------+------+-----------|
  * | QK_BOOT |      |      |      |      |      |------|--------|   |-------|-------|      |      |      |      |      |  QK_BOOT  |
  * `--------------------------------------------|               /    \              |----------------------------------------------'
- *                         | LCTRL| LGUI |LALT  |Space | LOWER /      \ RAISE| Enter|BackSP| RGUI | RALT |
- *                         `----------------------------------'        '---------------------------------'
+ *                                       |LALT  |Space | LOWER /      \ RAISE| Enter|BackSP|
+ *                                       `--------------------'        '-------------------'
  */
 [_ADJUST] = LAYOUT_split_3x6_3(
     RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX, XXXXXXX,                     KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX, XXXXXXX,
@@ -88,6 +88,13 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     state = update_tri_layer_state(state, _RAISE, _LOWER, _ADJUST);
     return state;
 }
+
+const key_override_t at_override = ko_make_with_layers(MOD_BIT_RALT, KC_A, KC_2, 1<<0);
+
+const key_override_t **key_overrides = (const key_override_t *[]){
+	&at_override,
+	NULL
+};
 
 #ifdef RGBLIGHT_ENABLE
 
