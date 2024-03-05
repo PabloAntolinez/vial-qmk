@@ -6,3 +6,6 @@
 
 /* default layer count */
 #define DYNAMIC_KEYMAP_LAYER_COUNT 10
+
+#define SPLIT_USB_DETECT
+#define NO_USB_STARTUP_CHECK
