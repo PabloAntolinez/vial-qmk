@@ -20,7 +20,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |---------+------+------+------+------+------|                                   |------+------+------+------+------+-----------|
  * |  LShift |   A  |   S  |   D  |   F  |   G  |                                   |   H  |   J  |   K  |   L  |   ;  |  '        |
  * |---------+------+------+------+------+------|                                   |------+------+------+------+------+-----------|
- * |  LCTRL  |   Z  |   X  |   C  |   V  |   B  |                                   |   N  |   M  |   ,  |  .  |   /  |RShift/Enter|
+ * |  LCTRL  |   Z  |   X  |   C  |   V  |   B  |                                   |   N  |   M  |   ,  |  .   |   /  |   RALT    |
  * `------------------------------------------------------------/    \--------------|----------------------------------------------'
  *                                       |LALT  |Space | LOWER /      \ RAISE| Enter|BackSP| 
  *                                       `--------------------'        '-------------------'
@@ -28,12 +28,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  [_QWERTY] = LAYOUT_split_3x6_3(
     KC_TAB,  KC_Q,  KC_W,    KC_E,    KC_R,    KC_T,                       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINS,
     KC_LSFT, KC_A,  KC_S,    KC_D,    KC_F,    KC_G,                       KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-    KC_LCTL, KC_Z,  KC_X,    KC_C,    KC_V,    KC_B,                       KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, RSFT_T(KC_ENT),
+    KC_LCTL, KC_Z,  KC_X,    KC_C,    KC_V,    KC_B,                       KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RALT,
                                    KC_LALT,  KC_ENT,   LOWER,    RAISE,  KC_SPC,   KC_BSPC
 ),
 /* LOWER
  * ,--------------------------------------------.                                   ,----------------------------------------------.
- * |         |   1  |   2  |   3  |   4  |   5  |                                   |   6  |   7  |   8  |   9  |   0  |  F12      |
+ * |         |   1  |   2  |   3  |   4  |   5  |                                   |   6  |   7  |   8  |   9  |   0  |           |
  * |---------+------+------+------+------+------|                                   |------+------+------+------+------+-----------|
  * |    `    |   !  |   @  |   #  |   $  |   %  |                                   |   ^  |   &  |   *  |   (  |   )  |  ~        |
  * |---------+------+------+------+------+------|                                   |------+------+------+------+------+-----------|
@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                      `---------------------'        '-------------------'
  */
 [_LOWER] = LAYOUT_split_3x6_3(
-    _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_F12,
+    _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
     KC_GRV,  KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                   KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_TILD,
     _______, _______, _______, _______, _______, _______,                   XXXXXXX, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_BSLS,
                                         _______, _______, _______, _______, _______, _______
@@ -88,13 +88,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     state = update_tri_layer_state(state, _RAISE, _LOWER, _ADJUST);
     return state;
 }
-
-const key_override_t at_override = ko_make_with_layers(MOD_BIT_RALT, KC_A, KC_2, 1<<0);
-
-const key_override_t **key_overrides = (const key_override_t *[]){
-	&at_override,
-	NULL
-};
 
 #ifdef RGBLIGHT_ENABLE
 
