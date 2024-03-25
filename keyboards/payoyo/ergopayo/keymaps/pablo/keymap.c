@@ -92,16 +92,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #ifdef RGBLIGHT_ENABLE
 
 const rgblight_segment_t PROGMEM layer0_colors[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 2, 85, 255, 75}
+    {0, 2, 0, 0, 40}
 );
 const rgblight_segment_t PROGMEM layer1_colors[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 2, 170, 255, 75}
+    {0, 2, 0 , 255, 40}
 );
 const rgblight_segment_t PROGMEM layer2_colors[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 2, 0, 255, 75}
+    {0, 2, 85, 255, 40}
 );
 const rgblight_segment_t PROGMEM layer3_colors[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 2, 191, 255, 75}
+    {0, 2, 169, 255, 40}
 );
 const rgblight_segment_t PROGMEM layer4_colors[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, 2, 30, 218, 75}
@@ -134,7 +134,8 @@ layer_state_t default_layer_state_set_user(layer_state_t state) {
     return state;
 }
 
-layer_state_t layer_state_set_user(layer_state_t state) {
+layer_state_t layer_state_set_user(layer_state_t state) {       
+    state = update_tri_layer_state(state, _RAISE, _LOWER, _ADJUST);
     rgblight_set_layer_state(0, layer_state_cmp(state, 0));
     rgblight_set_layer_state(1, layer_state_cmp(state, 1));
     rgblight_set_layer_state(2, layer_state_cmp(state, 2));
@@ -142,8 +143,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(4, layer_state_cmp(state, 4));
     rgblight_set_layer_state(5, layer_state_cmp(state, 5));
     rgblight_set_layer_state(6, layer_state_cmp(state, 6));
-    
-    state = update_tri_layer_state(state, _RAISE, _LOWER, _ADJUST);
     return state;
 }
 
