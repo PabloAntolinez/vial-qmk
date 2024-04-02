@@ -5,7 +5,7 @@
 
 
 // Limit the power draw
-#define RGBLIGHT_LIMIT_VAL 80  
+#define RGBLIGHT_LIMIT_VAL 200 
 
 // Not yet available in `info.json`
 #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 80
