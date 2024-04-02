@@ -24,12 +24,12 @@
 #define VIAL_UNLOCK_COMBO_COLS { 0, 0 }
 #define VIALRGB_NO_DIRECT
 
-#define DYNAMIC_KEYMAP_LAYER_COUNT 4
+#define DYNAMIC_KEYMAP_LAYER_COUNT 8
 
 /* Select hand configuration */
 //------------------------------------------
-// #define MASTER_LEFT
-#define MASTER_RIGHT
+#define MASTER_LEFT
+//#define MASTER_RIGHT
 // #define EE_HANDS
 //------------------------------------------
 
