@@ -8,6 +8,8 @@ enum layers {
     _LOWER,
     _RAISE,
     _ADJUST,
+    _GAMING,
+    _COLEMAK
 };
 
 #define RAISE MO(_RAISE)
@@ -65,6 +67,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,                 KC_PLUS, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
                                        _______, _______, _______, _______, _______, _______
 ),
+/* ADJUST (Press LOWER and RAISE together)
+ * ,--------------------------------------------.                                   ,----------------------------------------------.
+ * | RGB ON  | HUE+ | SAT+ | VAL+ |      |      |                                   | PREV | PLAY | NEXT |      |      |           |
+ * |---------+------+------+------+------+------|                                   |------+------+------+------+------+-----------|
+ * | MODE    | HUE- | SAT- | VAL- |      |      |---------------.   ,---------------| VOL+ | MUTE | VOL- |      |      |           |
+ * |---------+------+------+------+------+------|      |        |   |       |       |------+------+------+------+------+-----------|
+ * | QK_BOOT |      |      |      |      |      |------|--------|   |-------|-------|      |      |      |      |      |  QK_BOOT  |
+ * `--------------------------------------------|               /    \              |----------------------------------------------'
+ *                                       |LALT  |Space | LOWER /      \ RAISE| Enter|BackSP|
+ *                                       `--------------------'        '-------------------'
+ */
+[_ADJUST] = LAYOUT_split_3x6_3(
+    RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX, XXXXXXX,                     KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX, XXXXXXX,
+    RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,                     KC_VOLU, KC_MUTE, KC_VOLD, XXXXXXX, XXXXXXX, XXXXXXX,
+    QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
+                                        _______, _______, _______,   _______, _______, _______
+)
 /* ADJUST (Press LOWER and RAISE together)
  * ,--------------------------------------------.                                   ,----------------------------------------------.
  * | RGB ON  | HUE+ | SAT+ | VAL+ |      |      |                                   | PREV | PLAY | NEXT |      |      |           |
