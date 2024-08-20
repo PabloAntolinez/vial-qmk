@@ -8,7 +8,7 @@
 #define RGBLED_NUM 2
 #define RGBLED_SPLIT { 1, 1 }
 
-// #define RGBLIGHT_LAYERS
+#define RGBLIGHT_LAYERS
 // #define RGBLIGHT_LAYERS_RETAIN_VAL
 
 /* default layer count */
