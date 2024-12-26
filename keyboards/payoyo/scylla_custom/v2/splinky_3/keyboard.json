@@ -7,7 +7,7 @@
         "bootmagic": true,
         "mousekey": false,
         "extrakey": true,
-        "rgb_matrix": true
+        "rgb_matrix": false
     },
     "rgb_matrix": {
         "driver": "ws2812"
