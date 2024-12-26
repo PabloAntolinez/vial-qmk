@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,                     KC_VOLU, KC_MUTE, KC_VOLD, XXXXXXX, XXXXXXX, XXXXXXX,
     QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
                                         _______, _______, _______,   _______, _______, _______
-)
+),
 /* ADJUST (Press LOWER and RAISE together)
  * ,--------------------------------------------.                                   ,----------------------------------------------.
  * | RGB ON  | HUE+ | SAT+ | VAL+ |      |      |                                   | PREV | PLAY | NEXT |      |      |           |
@@ -100,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,                     KC_VOLU, KC_MUTE, KC_VOLD, XXXXXXX, XXXXXXX, XXXXXXX,
     QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
                                         _______, _______, _______,   _______, _______, _______
-)
+),
 /* ADJUST (Press LOWER and RAISE together)
  * ,--------------------------------------------.                                   ,----------------------------------------------.
  * | RGB ON  | HUE+ | SAT+ | VAL+ |      |      |                                   | PREV | PLAY | NEXT |      |      |           |
