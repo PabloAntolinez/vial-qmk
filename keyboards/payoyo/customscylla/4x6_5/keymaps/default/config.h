@@ -9,14 +9,11 @@
 #define RGBLED_SPLIT { 1, 1 }
 
 #define RGBLIGHT_LAYERS
-// #define RGBLIGHT_LAYERS_RETAIN_VAL
 
 /* default layer count */
 #define DYNAMIC_KEYMAP_LAYER_COUNT 8
 
 #define MASTER_LEFT
-// #define SPLIT_USB_DETECT
-// #define NO_USB_STARTUP_CHECK
 
 //------------------------------------------
 // 'old' RGB Lightning definitions, used when RGBLIGHT_ENABLE = yes in rules.mk
