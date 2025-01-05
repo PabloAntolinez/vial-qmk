@@ -1,5 +1,5 @@
 {
-    "keyboard_name": "SuperScylla",
+    "keyboard_name": "CustomScylla",
     "usb": {
         "device_version": "1.0.0",
         "pid": "0x1837"
