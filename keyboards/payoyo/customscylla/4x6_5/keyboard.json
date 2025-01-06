@@ -31,9 +31,6 @@
         "extrakey": true,
         "mousekey": true,
         "nkro": true,
-        "rgb_matrix": false,
-        "pointing_device": false,
-        "caps_word": true,
         "tri_layer": true
     },
     "ws2812": {
