@@ -22,7 +22,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |---------+------+------+------+------+------|                                   |------+------+------+------+------+-----------|
  * |  LCTRL  |   Z  |   X  |   C  |   V  |   B  |                                   |   N  |   M  |   ,  |  .   |   /  |   RALT    |
  * `------------------------------------------------------------/    \--------------|----------------------------------------------'
- *                                       |LALT  |Space | LOWER /      \ RAISE| Enter|BackSP| 
+ *                                       |LALT  |Space | LOWER /      \ RAISE| Enter|BackSP|
  *                                       `--------------------'        '-------------------'
  */
  [_QWERTY] = LAYOUT_split_3x6_3(
@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |---------+------+------+------+------+------|                                   |------+------+------+------+------+-----------|
  * |         |      |      |      |      |      |                                   |      |   _  |   +  |   {  |   }  |  \        |
  * `--------------------------------------------|---------------/    \--------------|----------------------------------------------'
- *                                      | LALT  |Space | LOWER /      \ RAISE| Enter|BackSP| 
+ *                                      | LALT  |Space | LOWER /      \ RAISE| Enter|BackSP|
  *                                      `---------------------'        '-------------------'
  */
 [_LOWER] = LAYOUT_split_3x6_3(
@@ -88,24 +88,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     state = update_tri_layer_state(state, _RAISE, _LOWER, _ADJUST);
 //     return state;
 // }
-
+#ifdef RGBLIGHT_ENABLE
 const rgblight_segment_t PROGMEM layer0_colors[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 2, 0, 0, 0}
+    {0, 2, HSV_BLACK}
 );
 const rgblight_segment_t PROGMEM layer1_colors[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 2, 255, 255, 75}
+    {0, 2, HSV_YELLOW}
 );
 const rgblight_segment_t PROGMEM layer2_colors[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 2, 0, 255, 0}
+    {0, 2, HSV_GREEN}
 );
 const rgblight_segment_t PROGMEM layer3_colors[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 2, 0, 0, 255}
+    {0, 2, HSV_BLUE}
 );
 const rgblight_segment_t PROGMEM layer4_colors[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 2, 255, 0, 0}
+    {0, 2, HSV_RED}
 );
 const rgblight_segment_t PROGMEM layer5_colors[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 2, 255, 255, 255}
+    {0, 2, HSV_WHITE}
 );
 const rgblight_segment_t PROGMEM layer6_colors[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, 2, 106, 255, 75}
@@ -131,3 +131,16 @@ layer_state_t default_layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(0, layer_state_cmp(state, 0));
     return state;
 }
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    rgblight_set_layer_state(0, layer_state_cmp(state, 0));
+    rgblight_set_layer_state(1, layer_state_cmp(state, 1));
+    rgblight_set_layer_state(2, layer_state_cmp(state, 2));
+    rgblight_set_layer_state(3, layer_state_cmp(state, 3));
+    rgblight_set_layer_state(4, layer_state_cmp(state, 4));
+    rgblight_set_layer_state(5, layer_state_cmp(state, 5));
+    rgblight_set_layer_state(6, layer_state_cmp(state, 6));
+    return state;
+}
+
+#endif
