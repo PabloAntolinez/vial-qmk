@@ -5,11 +5,13 @@
 #define VIAL_UNLOCK_COMBO_COLS { 0, 5 }
 
 #define WS2812_DI_PIN GP23
-#define RGBLED_NUM 2
+#define RGBLIGHT_LED_COUNT 2
 #define RGBLED_SPLIT { 1, 1 }
 
 #define RGBLIGHT_LAYERS
-#define RGBLIGHT_LAYERS_RETAIN_VAL
+
+// #define RGBLIGHT_LAYERS_RETAIN_VAL
+
 
 /* default layer count */
 #define DYNAMIC_KEYMAP_LAYER_COUNT 10
