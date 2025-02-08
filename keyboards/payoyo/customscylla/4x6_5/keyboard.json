@@ -14,13 +14,11 @@
     "diode_direction": "COL2ROW",
     "split": {
         "enabled": true,
-        "soft_serial_pin": "GP1",
-        "bootmagic": {
-            "matrix": [5, 0]
-        },
-        "transport":{
-            "sync": {
-                "matrix_state": true
+        "soft_serial_pin": "GP0",
+        "matrix_pins": {
+            "right":  {
+                "cols": ["GP7", "GP6", "GP5", "GP4", "GP3", "GP2"],
+                "rows": ["GP28", "GP27", "GP26", "GP15","GP14"]
             }
         }
     },
@@ -30,8 +28,7 @@
         "console": false,
         "extrakey": true,
         "mousekey": true,
-        "nkro": true,
-        "tri_layer": true
+        "nkro": true
     },
     "ws2812": {
         "pin": "GP16",

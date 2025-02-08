@@ -13,8 +13,6 @@
 /* default layer count */
 #define DYNAMIC_KEYMAP_LAYER_COUNT 8
 
-#define MASTER_LEFT
-
 //------------------------------------------
 // 'old' RGB Lightning definitions, used when RGBLIGHT_ENABLE = yes in rules.mk
 //------------------------------------------
