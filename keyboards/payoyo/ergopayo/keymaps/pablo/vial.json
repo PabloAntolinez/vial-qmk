@@ -1,6 +1,6 @@
 {
     "name": "ergopayo",
-    "lighting": "qmk_rgblight",
+    "lighting": "none",
     "matrix": {
         "rows": 8,
         "cols": 6
